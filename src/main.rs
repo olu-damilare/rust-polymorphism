@@ -1,8 +1,8 @@
-struct Human;
+struct Cat;
 
-impl Human {
+impl Cat {
     fn walk(&self) -> (){
-       println!("Human is walking")
+       println!("Cat is walking")
     }
 }
 
@@ -15,8 +15,8 @@ impl Dog {
 }
 
 fn main() {
-   let human = Human{};
+   let cat = Cat{};
    let dog = Dog {};
-   human.walk();
+   cat.walk();
    dog.walk();
 }

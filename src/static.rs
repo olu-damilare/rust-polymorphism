@@ -2,12 +2,12 @@ trait Walkable {
     fn walk(&self);
 }
 
-struct Human;
+struct Cat;
 struct Dog;
 
-impl Walkable for Human {
+impl Walkable for Cat {
     fn walk(&self) {
-        println!("Human is walking");
+        println!("Cat is walking");
     }
 }
 
@@ -18,14 +18,14 @@ impl Walkable for Dog {
 }
 
 
-fn static_dispatch<T: Walkable>(t: T) {
+fn generic_walk<T: Walkable>(t: T) {
     t.walk();
 }
 
 fn main() {
-    let human = Human{};
+    let cat = Cat{};
     let dog = Dog{};
 
-    static_dispatch(&human); // Human is walking
-    static_dispatch(&dog); // Dog is walking
+    generic_walk(cat); // Cat is walking
+    generic_walk(dog); // Dog is walking
 }
